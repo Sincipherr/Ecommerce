@@ -10,13 +10,13 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
-    IUserRepo ur;
+    IUserRepo userDao;
 
     public void addUsers(User user) {
-        ur.save(user);
+        userDao.save(user);
     }
 
     public List<User> getUserById(Integer userId) {
-        return ur.findByUserId(userId);
+        return userDao.findByUserId(userId);
     }
 }

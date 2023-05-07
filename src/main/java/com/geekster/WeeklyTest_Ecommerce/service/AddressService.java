@@ -8,9 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class AddressService {
     @Autowired
-    IAddressRepo ar;
+    IAddressRepo addressDao;
 
     public void addAddress(Address address) {
-        ar.save(address);
+        addressDao.save(address);
     }
+
 }

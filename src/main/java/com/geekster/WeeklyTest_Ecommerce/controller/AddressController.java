@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AddressController {
     @Autowired
-    AddressService as;
+    AddressService addressService;
 
     @PostMapping(value = "/createAddress")
     public void addAddress(@RequestBody Address address){
-        as.addAddress(address);
+        addressService.addAddress(address);
     }
 }

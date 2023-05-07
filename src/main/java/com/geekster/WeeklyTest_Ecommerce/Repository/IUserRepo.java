@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface IUserRepo extends CrudRepository<User,Integer> {
     public List<User> findByUserId(Integer userId);
+
 }

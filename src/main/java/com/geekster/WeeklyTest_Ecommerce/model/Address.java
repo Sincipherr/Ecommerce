@@ -13,11 +13,11 @@ import lombok.NoArgsConstructor;
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer aId;
+    private Integer addressId;
     private String name;
     private String landmark;
-    private String phoneNumber;
-    private String zipCode;
+    private String phNo;
+    private String zipcode;
     private String state;
 
     @ManyToOne(cascade = CascadeType.ALL)

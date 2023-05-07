@@ -10,21 +10,21 @@ import java.util.List;
 @Service
 public class ProductService {
     @Autowired
-    IProductRepo pr;
+    IProductRepo productDao;
 
     public void addProducts(Product product) {
-        pr.save(product);
+        productDao.save(product);
     }
 
     public Iterable<Product> getAll() {
-       return pr.findAll();
+        return productDao.findAll();
     }
 
     public List<Product> getByCategory(String category) {
-       return pr.findByCategory(category);
+        return productDao.findByCategory(category);
     }
 
     public void deleteProduct(Integer productId) {
-        pr.deleteById(productId);
+        productDao.deleteById(productId);
     }
 }

@@ -10,25 +10,25 @@ import java.util.List;
 @RestController
 public class ProductController {
     @Autowired
-    ProductService ps;
+    ProductService productService;
 
     @PostMapping(value = "/createProducts")
     public void addProducts(@RequestBody Product product){
-        ps.addProducts(product);
+        productService.addProducts(product);
     }
 
     @GetMapping(value = "/getAllProducts")
     public Iterable<Product> getAll(){
-        return ps.getAll();
+        return productService.getAll();
     }
 
-    @GetMapping(value = "/getProductByCategory/{category}")
-    public List<Product> getByCategory(@PathVariable String category){
-        return ps.getByCategory(category);
+    @GetMapping(value = "/getProductByCategory?category={category}")
+    public List<Product> getByCategory(@RequestParam String category){
+        return productService.getByCategory(category);
     }
 
     @DeleteMapping(value = "/deleteById/{productId}")
     public void deleteProduct(@PathVariable Integer productId){
-        ps.deleteProduct(productId);
+        productService.deleteProduct(productId);
     }
 }

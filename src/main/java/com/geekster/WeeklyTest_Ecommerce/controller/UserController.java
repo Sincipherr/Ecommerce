@@ -10,16 +10,16 @@ import java.util.List;
 @RestController
 public class UserController {
     @Autowired
-    UserService us;
+    UserService userService;
 
     @PostMapping(value = "/createUsers")
     public void addUsers(@RequestBody User user){
-        us.addUsers(user);
+        userService.addUsers(user);
     }
 
     @GetMapping(value = "/getByUserId/{userId}")
-    public List<User> getUserById(@PathVariable Integer userId){
-        return us.getUserById(userId);
+    public List<User> getUserById(@PathVariable  Integer userId){
+        return userService.getUserById(userId);
     }
 
 }
